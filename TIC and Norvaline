@@ -1,13 +1,12 @@
 # Collated code
 import pandas as pd
 import xlsxwriter as xw
+import os
+os.chdir("D:\SL\\UCLA\Classes\M200\Rotation in Ajit's Lab!\data\GCMS\Methos compare")
+# Change to your own directory with your file
+glut = pd.read_excel(r"6142019-new method.xlsx", header=None)
+# Change to your own file name
 
-glut = pd.read_excel(r"D:\SL\UCLA\Classes\M200\Rotation in Ajit's Lab!\data\GCMS\Methos compare\6142019-new method.xlsx", header=None)
-# Change to your own directory
-# or you can look and change your working directory with: 
-# import os
-# os.getcwd() 
-# os.chdir("C:\balabala....") 
 
 glut.fillna(0, inplace=True)
 #fill NA with 0
@@ -29,9 +28,6 @@ for nsample in range(1,glut.shape[1]): #shape has numbers of rows([0]) and colum
             
             MetaName = glut[0][i][:-4]
             MetaSum = MetaSum + glut[nsample][i+1]
-
-            
-           
 
         elif ("Name" in glut[0][i+1]) or("Resp." in glut[0][i+1]) :
 
@@ -57,7 +53,7 @@ for nsample in range(1,glut.shape[1]): #shape has numbers of rows([0]) and colum
     MetaSum = 0
 TIC.close()
 
-TICpd = pd.read_excel(r"C:\Users\囧迫雷雷\Desktop\纷\TIC.xlsx", header=None)
+TICpd = pd.read_excel(r"TIC.xlsx", header=None)
 #read the file we just created
 TICNorvaline = xw.Workbook('TICNorvaline.xlsx') 
 worksheet2 = TICNorvaline.add_worksheet("TICNorvaline") 
