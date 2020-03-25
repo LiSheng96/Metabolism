@@ -35,14 +35,10 @@ for nsample in range(1,glut.shape[1]): #shape has numbers of rows([0]) and colum
         else :
             if "Norvaline 260" in MetaName:
                 Norvaline260.append(MetaSum) #Save Norvaine to a list for normalization
-                #worksheet.write(nrow, 0, MetaName)
-                #worksheet.write(nrow, nsample, MetaSum)
-                #MetaSum = glut[nsample][i+1]
+                
             elif "Norvaline 288" in MetaName:
                 Norvaline288.append(MetaSum) #Save Norvaine to a list for normalization
-                #worksheet.write(nrow, 0, MetaName)
-                #worksheet.write(nrow, nsample, MetaSum)
-                #MetaSum = glut[nsample][i+1]
+                
             worksheet.write(nrow, 0, MetaName)
             worksheet.write(nrow, nsample, MetaSum)
             MetaSum = glut[nsample][i+1]
